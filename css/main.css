@@ -1,0 +1,119 @@
+/* main */
+
+/* hero banner */
+
+.scroll-banner {
+    margin-top: 150px;
+}
+
+.scroll-banner-wrapper {
+    margin: 0 158px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-banner .scroll-banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.scroll-banner .scroll-banner-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.scroll-banner .scroll-banner-container img {
+    margin: 0px 8px;
+    width: 384px;
+    height: 223px;
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+.scroll-banner-wrapper:hover .scroll-arrow {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: #0c5377;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+    opacity: 0;
+}
+
+.scroll-left {
+    left: 20px;
+}   
+
+.scroll-right {
+    right: 20px;
+}
+
+/* Navigation dots */
+
+.scroll-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #c7ddff;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dot:hover {
+    transform: scale(1.2);
+    background-color: #999;
+}
+
+.dot.active {
+    background-color: #0c5377;
+    width: 24px;  
+    border-radius: 12px; 
+    transform: scale(1);
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: rgba(0, 102, 255, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.dot.active::before {
+    transform: scale(1);
+    border-radius: 16px;
+}
